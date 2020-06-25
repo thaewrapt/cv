@@ -1,2 +1,2 @@
-# cv
-My CV, opensourced.
+# CV
+My up-to-date CV, opensourced.
