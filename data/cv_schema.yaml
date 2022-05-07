@@ -1,0 +1,274 @@
+---
+type: map
+required: yes
+mapping:
+  "title":
+    type: text
+    required: yes
+  "personal_info":
+    type: map
+    required: yes
+    mapping:
+      "title":
+        type: text
+        required: yes
+      "name":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "value":
+            type: text
+            required: yes
+      "goal":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "value":
+            type: text
+            required: yes
+      "birthday":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "value":
+            type: text
+            required: yes
+      "location":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "value":
+            type: text
+            required: yes
+      "contacts":
+        type: map
+        required: yes
+        mapping:
+          "phone":
+            type: map
+            required: yes
+            mapping:
+              "title":
+                type: text
+                required: yes                
+              "value":
+                type: text
+                required: yes                
+              "type":
+                type: text
+                required: yes                
+          "email":
+            type: map
+            required: yes
+            mapping:
+              "title":
+                type: text
+                required: yes                
+              "value":
+                type: text
+                required: yes                
+              "type":
+                type: text
+                required: yes                
+          "skype":
+            type: map
+            required: yes
+            mapping:
+              "title":
+                type: text
+                required: yes                
+              "value":
+                type: text
+                required: yes                
+              "type":
+                type: text
+                required: yes                
+          "github":
+            type: map
+            required: yes
+            mapping:
+              "title":
+                type: text
+                required: yes                
+              "value":
+                type: text
+                required: yes                
+              "type":
+                type: text
+                required: yes                
+          "linkedin":
+            type: map
+            required: yes
+            mapping:
+              "title":
+                type: text
+                required: yes                
+              "value":
+                type: text
+                required: yes                
+              "type":
+                type: text
+                required: yes                
+  "education":
+    type: map
+    required: yes
+    mapping:
+      "title":
+        type: text
+        required: yes
+      "schools":
+        type: seq
+        required: yes
+        sequence:
+          - type: map
+            mapping:
+              "start":
+                type: text
+                required: yes
+              "finish":
+                type: text
+                required: yes
+              "name":
+                type: text
+                required: yes
+              "status":
+                type: text
+                required: yes
+  "buzzwords":
+    type: map
+    required: yes
+    mapping:
+      "title":
+        type: text
+        required: yes
+      "technologies":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "values":
+            type: seq
+            required: yes
+            sequence:
+              - type: text
+      "paradigms":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "values":
+            type: seq
+            required: yes
+            sequence:
+              - type: text
+      "tools":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "values":
+            type: seq
+            required: yes
+            sequence:
+              - type: text
+      "platforms":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "values":
+            type: seq
+            required: yes
+            sequence:
+              - type: text
+      "spoken":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "values":
+            type: seq
+            required: yes
+            sequence:
+              - type: text
+  "experience":
+    type: map
+    required: yes
+    mapping:
+      "title":
+        type: text
+        required: yes
+      "projects":
+        type: seq
+        required: yes
+        sequence:
+          - type: map
+            mapping:
+              "start":
+                type: text
+                required: yes
+              "finish":
+                type: text
+                required: yes
+              "name":
+                type: text
+                required: yes
+              "url":
+                type: text
+                required: no
+              "location":
+                type: text
+                required: no
+              "title":
+                type: text
+                required: yes
+              "responsibilities":
+                type: text
+                required: yes
+              "technologies":
+                type: seq
+                required: yes
+                sequence:
+                  - type: text
+  "more":
+    type: map
+    required: yes
+    mapping:
+      "title":
+        type: text
+        required: yes
+      "hobbies":
+        type: map
+        required: yes
+        mapping:
+          "title":
+            type: text
+            required: yes
+          "values":
+            type: seq
+            required: yes
+            sequence:
+              - type: text
+

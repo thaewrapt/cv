@@ -1,0 +1,213 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{supertabular}
+
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+
+\newcommand{\cvbold}[1]{
+	\bfseries #1
+}
+
+\newcommand{\cvsuperth}[1]{
+	\cvbold{
+		\underline{
+			#1:
+		}
+	}
+}
+
+\newcommand{\cvsupercolh}[1]{
+	\cvbold{
+		#1
+	}
+}
+
+\newcommand{\cvsupertable}[1]{
+	\tablehead{
+		\hline
+		\multicolumn{2}{|l|}{\small\sl (continued from previous page)}\\
+	}
+	
+	\tabletail{
+		\hline
+		\multicolumn{2}{|r|}{\small\sl (continued on next page)}\\
+		\hline
+	}
+	
+	\tablelasttail{
+		\hline
+	}	
+	
+	\tablefirsthead{
+		\hline
+		\multicolumn{2}{|c|}{
+			\cvsuperth{#1}
+		}\\
+		\multicolumn{2}{|c|}{}\\
+		\hline
+	}
+}
+
+\newcommand{\cvsuperheader}[1]{
+	\cvbold{
+		\huge{
+			#1
+		} 
+		\\
+		\\
+		\\
+	}
+}
+
+\newcommand{\cvcustomhref}[2]{
+	\href{#1}{\underline{#2}}
+}
+
+\newcommand{\cvwww}[1]{
+	\cvcustomhref{#1}{#1}
+}
+
+\newcommand{\cvemail}[1]{
+	\cvcustomhref{mailto:#1}{#1}
+}
+
+[% USE latex %]
+
+\begin{document}
+	\begin{center}
+		\cvsuperheader{[% title FILTER latex_encode %]}
+	\end{center}
+
+	\begin{center}
+		\cvsupertable{[% personal_info.title FILTER latex_encode %]}	
+
+		\begin{supertabular}{|p{0.33\linewidth}|p{0.66\linewidth}|}
+			\cvsupercolh{[% personal_info.name.title FILTER latex_encode %]} & [% personal_info.name.value FILTER latex_encode %] \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.goal.title FILTER latex_encode %]} & [% personal_info.goal.value FILTER latex_encode %] \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.birthday.title FILTER latex_encode %]} & [% personal_info.birthday.value FILTER latex_encode %] \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.location.title FILTER latex_encode %]} & [% personal_info.location.value FILTER latex_encode %] \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.contacts.phone.title FILTER latex_encode %]} & [% personal_info.contacts.phone.value FILTER latex_encode %] \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.contacts.email.title FILTER latex_encode %]} & \cvemail{[% personal_info.contacts.email.value FILTER latex_encode %]} \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.contacts.skype.title FILTER latex_encode %]} & [% personal_info.contacts.skype.value FILTER latex_encode %] \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.contacts.linkedin.title FILTER latex_encode %]} & \cvwww{[% personal_info.contacts.linkedin.value FILTER latex_encode %]} \\
+			
+			\hline
+			
+			\cvsupercolh{[% personal_info.contacts.github.title FILTER latex_encode %]} & \cvwww{[% personal_info.contacts.github.value FILTER latex_encode %]} \\
+		\end{supertabular}
+	\end{center}
+
+	\begin{center}
+		\cvsupertable{[% education.title FILTER latex_encode %]}
+		
+		\begin{supertabular}{|p{0.33\linewidth}|p{0.66\linewidth}|}
+			[% FOREACH school IN education.schools %]	
+			\cvsupercolh{[% school.start FILTER latex_encode %] - [% school.finish FILTER latex_encode %]} & [% school.name FILTER latex_encode %] ([% school.status FILTER latex_encode %]) \\
+			
+			[% UNLESS loop.last %]
+			\hline
+			[% END %]
+			[% END %]
+		\end{supertabular}
+	\end{center}
+	
+	\begin{center}
+		\cvsupertable{[% buzzwords.title FILTER latex_encode %]}
+	
+		\begin{supertabular}{|p{0.33\linewidth}|p{0.66\linewidth}|}
+			\cvsupercolh{[% buzzwords.technologies.title FILTER latex_encode %]:} & 
+			[% FOREACH tech IN buzzwords.technologies.values %][% tech FILTER latex_encode %][% UNLESS loop.last %], [% END %][% END %] \\
+			
+			\hline
+
+			\cvsupercolh{[% buzzwords.paradigms.title FILTER latex_encode %]:} & 
+			[% FOREACH paradigm IN buzzwords.paradigms.values %][% paradigm FILTER latex_encode %][% UNLESS loop.last %], [% END %][% END %] \\
+
+			\hline
+
+			\cvsupercolh{[% buzzwords.tools.title FILTER latex_encode %]:} & 
+			[% FOREACH tool IN buzzwords.tools.values %][% tool FILTER latex_encode %][% UNLESS loop.last %], [% END %][% END %] \\
+
+			\hline
+			
+			\cvsupercolh{[% buzzwords.platforms.title FILTER latex_encode %]:} & 
+			[% FOREACH platform IN buzzwords.platforms.values %][% platform FILTER latex_encode %][% UNLESS loop.last %], [% END %][% END %] \\
+
+			\hline
+
+			\cvsupercolh{[% buzzwords.spoken.title FILTER latex_encode %]:} & 
+			[% FOREACH lang IN buzzwords.spoken.values %][% lang FILTER latex_encode %][% UNLESS loop.last %], [% END %][% END %] \\
+		\end{supertabular}
+	\end{center}
+
+	\begin{center}
+		\cvsupertable{[% experience.title FILTER latex_encode %]}
+			
+		\begin{supertabular}{|p{0.33\linewidth}|p{0.66\linewidth}|}
+			[% FOREACH project IN experience.projects %]
+			\cvsupercolh{[% project.start FILTER latex_encode %] - [% project.finish FILTER latex_encode %]} & [% project.name FILTER latex_encode %] \\
+				
+			\hline
+
+			[% IF project.url %]
+			\cvsupercolh{Homepage:} & \cvwww{[% project.url FILTER latex_encode %]} \\
+				
+			\hline
+			[% END %]
+			
+			\cvsupercolh{Location:} & [% project.location FILTER latex_encode %] \\
+				
+			\hline
+
+			\cvsupercolh{Job Title:} & [% project.title FILTER latex_encode %] \\
+				
+			\hline
+			
+			\cvsupercolh{Responsibilities:} & [% project.responsibilities FILTER latex_encode %] \\
+				
+			\hline
+			
+			\cvsupercolh{Technologies:} & [% FOREACH tech IN project.technologies %][% tech FILTER latex_encode %][% UNLESS loop.last %], [% END %][% END %] \\
+
+			[% UNLESS loop.last %]
+			\hline
+			\multicolumn{2}{|c|}{} \\
+			\hline			
+			[% END %]
+
+			[% END %]
+		\end{supertabular}
+	\end{center}
+
+	\begin{center}
+		\cvsupertable{[% more.title FILTER latex_encode %]}
+			
+		\begin{supertabular}{|p{0.33\linewidth}|p{0.66\linewidth}|}
+			\cvsupercolh{[% more.hobbies.title %]:} & [% FOREACH hobby IN more.hobbies.values %][% hobby FILTER latex_encode %][% UNLESS loop.last %], [%END %][% END %] \\
+				
+			\hline
+		\end{supertabular}
+	\end{center}
+\end{document}
+
