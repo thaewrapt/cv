@@ -143,10 +143,31 @@ buzzwords:
     values:
     - "Russian & Ukrainian (native)"
     - "English (fluent)"
-    - "Polish, Czech & Japanese (very beginner)" 
+    - "Polish, Czech & Japanese (very beginner, want to learn)" 
 experience:
   title: "Detailed Experience"
   projects:
+  -
+    "start": "November 2022"
+    "finish": "July 2023"
+    "name": "CentralNic/Hexonet (via DevNest)"
+    "location": "Sumy/Lviv, Ukraine"
+    "url": "https://hexonet.com/"
+    "title": "Senior Software Developer (outstaff, remote)"
+    "responsibilities": "Helped to investigate and provided solutions to issues encountered by some of the services. Developed a new expanded version of one of the supporting engines. Participated in documentation."
+    "technologies":
+    - "Perl"
+    - "Unix shell"
+    - "Linux (Ubuntu)"
+    - "MacOSX"
+    - "TCP/IP (including FTP/FTPS, DNS)"
+    - "curl"
+    - "crontab"
+    - "docker (including compose)"
+    - "git"
+    - "Agile/Scrum"
+    - "Jira"
+    - "Confluence"
   -
     "start": "January 2019"
     "finish": "July 2019"
