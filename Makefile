@@ -17,9 +17,9 @@ DATA_DIR=data
 
 all: $(CV_NAME)
 
-check: schema_validation
+check: validate-schema
 
-schema_validation: $(DATA_DIR)/$(CV_YAML) $(DATA_DIR)/$(CV_SCHEMA)
+validate-schema: $(DATA_DIR)/$(CV_YAML) $(DATA_DIR)/$(CV_SCHEMA)
 	$(SCHEMA_VALIDATOR)
 
 $(CV_TEX): $(DATA_DIR)/$(CV_YAML) $(DATA_DIR)/$(CV_SCHEMA) $(DATA_DIR)/$(CV_TEMPLATE)
