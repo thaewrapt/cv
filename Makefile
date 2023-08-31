@@ -31,3 +31,8 @@ $(CV_NAME): $(CV_TEX) $(DATA_DIR)/$(CV_TEX)
 clean: 
 	$(RM) $(DATA_DIR)/$(CV_TEX) $(DATA_DIR)/$(CV_OUT) $(DATA_DIR)/$(CV_AUX) $(DATA_DIR)/$(CV_LOG) $(DATA_DIR)/$(OTHER_LOGS)
 
+clean-results:
+	$(RM) $(DATA_DIR)/$(CV_PDF)
+
+clean-all: clean-results clean
+
